@@ -5,11 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Febi Birthday</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="css/style.css">
-
 <link rel="icon" href="data:,">
 </head>
 
@@ -17,93 +14,86 @@
 
     <audio id="bgMusic" src="music/birthday.mp3" autoplay loop></audio>
 
-
-<!-- HOME -->
-<section id="home" class="active">
-    <h1>Hello, Febi! ✨</h1>
-<div id="countdown" class="countdown"></div>
-    <div class="photo-grid">
-        <img src="images/1.jpg">
-        <img src="images/2.jpg">
-        <img src="images/3.jpg">
-        <img src="images/4.jpg">
-    </div>
-</section>
-
-<!-- PROFILE -->
-<section id="profile">
-    <div class="card">
-        <div class="sparkle-decor">🎀✨</div>
-        <img src="images/febi.jpg" class="profile-img">
-        <h2>Happy Birthday Febi 🎉</h2>
-        <p>Kind • Sweet • Amazing • Iconic</p>
-    </div>
-    <div class="bio-box">
-        <p>Febi itu orang yang selalu bikin suasana jadi cerah. Energinya positif banget dan selalu peduli sama orang sekitar.</p>
-        <p>Semoga tahun ini makin sukses, makin bahagia, dan semua impiannya tercapai ✨</p>
-    </div>
-    
-</section>
-
-<!-- GREET -->
-<section id="greet">
-    <div class="card">
-        <h2>Send Birthday Wish 💌</h2>
-
-        <div class="form-group">
-            <input type="text" id="senderName" placeholder=" " required>
-            <label>Sender Name</label>
+    <!-- HOME -->
+    <section id="home" class="active">
+        <h1>Hello, Febi! ✨</h1>
+        <div id="countdown" class="countdown"></div>
+        <div class="photo-grid">
+            <img src="images/1.jpg">
+            <img src="images/2.jpg">
+            <img src="images/3.jpg">
+            <img src="images/4.jpg">
         </div>
-        <div class="form-group">
-            <input type="text" id="messageInput" placeholder="" required>
-            <label>Your Message</label>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile">
+        <div class="card">
+            <div class="sparkle-decor">🎀✨</div>
+            <img src="images/febi.jpg" class="profile-img">
+            <h2>Happy Birthday Febi 🎉</h2>
+            <p>Kind • Sweet • Amazing • Iconic</p>
+        </div>
+        <div class="bio-box">
+            <p>Febi itu orang yang selalu bikin suasana jadi cerah. Energinya positif banget dan selalu peduli sama orang sekitar.</p>
+            <p>Semoga tahun ini makin sukses, makin bahagia, sehat selalu, dan semua impiannya tercapai ✨</p>
+        </div>
+    </section>
+
+    <!-- GREET -->
+    <section id="greet">
+        <div class="card">
+            <h2>Send Birthday Wish 💌</h2>
+
+            <div class="form-group">
+                <input type="text" id="senderName" placeholder=" " required>
+                <label>Sender Name</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="messageInput" placeholder="" required>
+                <label>Your Message</label>
+            </div>
+
+            <label for="photoInput" class="file-label">📷 Choose Photo</label>
+            <input type="file" id="photoInput" accept="image/*">
+            <img id="previewImage" style="display:none; width:100%; margin-top:10px; border-radius:15px;">
+
+            <button onclick="sendMessage()">Send</button>
         </div>
 
-        <label for="photoInput" class="file-label">📷 Choose Photo</label>
-<input type="file" id="photoInput" accept="image/*">
-<img id="previewImage" style="display:none; width:100%; margin-top:10px; border-radius:15px;">
+        <div id="messagesContainer"></div>
+    </section>
 
+    <!-- GAME -->
+    <section id="game">
+        <div class="game-container">
+            <h2>Memory Flip 4x4 🃏</h2>
+            <div id="memoryBoard" class="memory-board"></div>
 
+            <h2>Leaderboard 🏆</h2>
+            <div id="leaderboard"></div>
+        </div>
+    </section>
 
-        <button onclick="sendMessage()">Send</button>
-    </div>
+    <!-- QUIZ SECTION -->
+    <section id="quizSection">
+        <div class="game-container">
+            <h2>Seberapa deket kamu sama Febi? 🤔</h2>
+            <div id="quiz"></div>
+        </div>
+    </section>
 
-    <div id="messagesContainer"></div>
-</section>
+    <!-- NAV -->
+    <nav>
+        <button data-section="home" class="active">🏠 Home</button>
+        <button data-section="profile">👤 Acta</button>
+        <button data-section="greet">💌 Greeting</button>
+        <button data-section="game">🎮 Game</button>
+        <button data-section="quizSection">📝 Quiz</button>
+    </nav>
 
-<!-- GAME -->
-<section id="game">
-    <div class="game-container">
-        
+    <!-- MAIN JS MODULE -->
+    <script type="module" src="js/main.js"></script>
 
-        <h2>Memory Flip 4x4 🃏</h2>
-        <div id="memoryBoard" class="memory-board"></div>
-<h2>Leaderboard 🏆</h2>
-<div id="leaderboard"></div>
-
-    </div>
-</section>
-
-<!-- QUIZ SECTION -->
-<section id="quizSection">
-  <div class="game-container">
-   <h2>Seberapa deket kamu sama Febi? 🤔</h2>
-        
-        <div id="quiz"></div>
-  </div>
-</section>
-
-
-<nav>
-    <button data-section="home" class="active">🏠 Home</button>
-    <button data-section="profile">👤 Acta</button>
-    <button data-section="greet">💌 Greeting</button>
-    <button data-section="game">🎮 Game</button>
-    <button data-section="quizSection">📝 Quiz</button>
-</nav>
-
-
-
-<script src="js/script.js"></script>
 </body>
 </html>
